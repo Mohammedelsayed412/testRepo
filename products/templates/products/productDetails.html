@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block main %}
+<h1>{{product.name |capfirst }} details</h1>
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <td>{{product.id}}</td>
+  </tr>
+  <tr>
+    <th>Name</th>
+    <td>{{product.name}}</td>
+  </tr>
+  <tr>
+    <th>Price</th>
+    <td>{{product.price}}</td>
+  </tr>
+  <tr>
+    <th>Count</th>
+    <td>{{product.count}}</td>
+  </tr>
+  <tr>
+    <th>Description</th>
+    <td>{{product.desc}}</td>
+  </tr>
+  <tr>
+    <th>Created at</th>
+    <td>{{product.created_at}}</td>
+  </tr>
+  <tr>
+    <th>Updated at</th>
+    <td>{{product.updated_at}}</td>
+  </tr>
+</table>
+{% endblock %}

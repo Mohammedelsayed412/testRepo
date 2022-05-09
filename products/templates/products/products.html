@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block main %} 
+<h1>All Products</h1>
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Count</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  {% for product in products %}
+  <tr>
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.count}}</td>
+    <td>
+      <a href="{{product.get_absolute_url}}" class="btn btn-info"> View</a>
+    </td>
+    <td><a href="{{product.get_edit_url}}" class="btn btn-warning"> Edit</a></td>
+    <td>
+      <a href="{{product.get_delete_url}}" class="btn btn-danger"> Delete</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

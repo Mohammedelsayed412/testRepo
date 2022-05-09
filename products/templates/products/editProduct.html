@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% block main %}
+<h1>Edit Product</h1>
+{% comment %}
+<form method="post" action="">
+  {% csrf_token %} {{form.as_p}}
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endcomment %}
+<form method="post" action="">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      value="{{product.name}}"
+      name="name"
+      aria-describedby="emailHelp"
+    />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Price</label>
+    <input
+      type="number"
+      value="{{product.price}}"
+      class="form-control"
+      name="price"
+      aria-describedby="emailHelp"
+    />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Count</label>
+    <input
+      type="number"
+      value="{{product.count}}"
+      class="form-control"
+      name="count"
+      aria-describedby="emailHelp"
+    />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Description</label>
+    <input
+      type="text"
+      value="{{product.desc}}"
+      class="form-control"
+      name="desc"
+      aria-describedby="emailHelp"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

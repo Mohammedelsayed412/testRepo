@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block main %} 
+{% for log in logs %}
+    {{log.id}}  :  {{log.date}} : {{log.userName}} : {{log.ip}} : 
+    {{log.eventName}} : {{log.actionType}} : {{log.description}} :
+    {% for key,val in log.eventSpecificFields.items %}
+        {{key}} ==> {{val}} :
+    {% endfor %}
+    <br>
+    <hr>
+{% endfor %}
+{% endblock %}
